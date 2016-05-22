@@ -15,13 +15,7 @@ import com.bergerkiller.bukkit.tc.TrainCarts;
 import com.bergerkiller.bukkit.tc.controller.MinecartGroup;
 import com.bergerkiller.bukkit.tc.controller.MinecartGroupStore;
 import com.bergerkiller.bukkit.tc.events.SignActionEvent;
-import com.bergerkiller.bukkit.tc.pathfinding.PathNode;
-import com.bergerkiller.bukkit.tc.properties.CartPropertiesStore;
-import com.bergerkiller.bukkit.tc.properties.TrainProperties;
-import com.bergerkiller.bukkit.common.MessageBuilder;
-import com.bergerkiller.bukkit.common.permissions.NoPermissionException;
-import com.bergerkiller.bukkit.common.utils.StringUtil;
-import com.bergerkiller.bukkit.common.utils.WorldUtil;
+
 
 public class GlobalCommands {
 
@@ -88,6 +82,34 @@ public class GlobalCommands {
 				sender.sendMessage(ChatColor.YELLOW + "All train routings will be recalculated");
 			}
 			return true;
+
+			} else if (args[0].equals("removeall") || args[0].equals("destroyall")) {
+			Permission.COMMAND_DESTROYALL.handle(sender);
+			if (args.length == 1) {
+				// Destroy all trains on the entire server
+				int count = OfflineGroupManager.destroyAll();
+				sender.sendMessage(ChatColor.RED.toString() + count + " (visible) trains have been destroyed!");	
+			} else {
+				// Destroy the trains on a single world
+				String cname = args[1].toLowerCase();
+				World w = Bukkit.getWorld(cname);
+				if (w == null) {
+					for (World world : Bukkit.getServer().getWorlds()) {
+						if (world.getName().toLowerCase().contains(cname)) {
+							w = world;
+							break;
+						}
+					}
+				}
+				if (w != null) {
+					int count = OfflineGroupManager.destroyAll(w);
+					sender.sendMessage(ChatColor.RED.toString() + count + " (visible) trains have been destroyed!");	
+				} else {
+					sender.sendMessage(ChatColor.RED + "World not found!");
+				}
+			}
+			return true;
+		}
 		} else if (args[0].equals("reload")) {
 			Permission.COMMAND_RELOAD.handle(sender);
 			TrainProperties.loadDefaults();

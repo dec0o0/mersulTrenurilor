@@ -12,4 +12,13 @@ public class GroupActionWaitForever extends GroupAction implements WaitAction {
 	public boolean isMovementSuppressed() {
 		return true;
 	}
+
+	@Override
+	public void start() {
+		for (MinecartMember<?> member : this.getGroup()) {
+			if (member instanceof MinecartMemberFurnace) {
+				((MinecartMemberFurnace) member).getEntity().setFuelTicks(CommonMinecartFurnace.COAL_FUEL);
+			}
+		}
+	}
 }

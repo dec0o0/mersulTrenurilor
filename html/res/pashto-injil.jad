@@ -1,0 +1,12 @@
+MIDlet-1:  پښتو إنجيل, Icon.png, GoBible
+MIDlet-Name:  پښتو إنجيل
+MIDlet-Icon: Icon.png
+MIDlet-Jar-Size: 494295
+MIDlet-Jar-URL: pashto-injil.jar
+MIDlet-Info-URL: http://www.pashtozeray.org/bible
+MIDlet-Vendor: Pashto Zeray
+MIDlet-Version: 2.4.4
+MIDlet-Data-Size: 100
+MicroEdition-Profile: MIDP-2.0
+Go-Bible-Info: The Pashto New Testament from http://www.pashtozeray.org/bible, Copyright © 2013 Pashto Zeray. Ver. 2.4.4
+Go-Bible-Align: Right
