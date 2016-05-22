@@ -20,6 +20,11 @@ public class RailLogicHorizontal extends RailLogic {
 			values[i] = new RailLogicHorizontal(FaceUtil.notchToFace(i));
 		}
 	}
+		public static final RailLogicAir INSTANCE = new RailLogicAir();
+
+	private RailLogicAir() {
+		super(BlockFace.SELF);
+	}
 
 	private final double dx, dz;
 	private final double startX, startZ;
