@@ -128,6 +128,39 @@ public class CartCommands {
 			} else {
 				mm.onDie();
 			}
+			else if (cmd.equals("setowner") || cmd.equals("setowners")) {
+			Permission.COMMAND_SETOWNERS.handle(p);
+			prop.clearOwners();
+			if (args.length == 0) {
+				p.sendMessage(ChatColor.YELLOW + "All owners for this minecart have been cleared!");
+			} else {
+				for (String owner : args) {
+					prop.setOwner(owner.toLowerCase());
+				}
+				p.sendMessage(ChatColor.YELLOW + "You set " + ChatColor.WHITE + StringUtil.combineNames(args) + ChatColor.YELLOW + " as owners of this minecart!");
+			}
+			else if (cmd.equals("setowner") || cmd.equals("setowners")) {
+			Permission.COMMAND_SETOWNERS.handle(p);
+			prop.clearOwners();
+			if (args.length == 0) {
+				p.sendMessage(ChatColor.YELLOW + "All owners for this minecart have been cleared!");
+			} else {
+				for (String owner : args) {
+					prop.setOwner(owner.toLowerCase());
+				}
+				p.sendMessage(ChatColor.YELLOW + "You set " + ChatColor.WHITE + StringUtil.combineNames(args) + ChatColor.YELLOW + " as owners of this minecart!");
+			}
+			else if (cmd.equals("setowner") || cmd.equals("setowners")) {
+			Permission.COMMAND_SETOWNERS.handle(p);
+			prop.clearOwners();
+			if (args.length == 0) {
+				p.sendMessage(ChatColor.YELLOW + "All owners for this minecart have been cleared!");
+			} else {
+				for (String owner : args) {
+					prop.setOwner(owner.toLowerCase());
+				}
+				p.sendMessage(ChatColor.YELLOW + "You set " + ChatColor.WHITE + StringUtil.combineNames(args) + ChatColor.YELLOW + " as owners of this minecart!");
+			}
 			p.sendMessage(ChatColor.YELLOW + "The selected minecart has been destroyed!");
 		} else if (cmd.equals("public")) {
 			Permission.COMMAND_SETPUBLIC.handle(p);
