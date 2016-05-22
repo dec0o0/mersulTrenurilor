@@ -1,0 +1,12 @@
+MIDlet-1:  دری کتاب مقدس, Icon.png, GoBible
+MIDlet-Name:  دری کتاب مقدس
+MIDlet-Icon: Icon.png
+MIDlet-Jar-Size: 1702787
+MIDlet-Jar-URL: dari-bible.jar
+MIDlet-Info-URL: http://www.afghanbibles.org
+MIDlet-Vendor: Afghan Bibles
+MIDlet-Version: 2.4.4
+MIDlet-Data-Size: 100
+MicroEdition-Profile: MIDP-2.0
+Go-Bible-Info: The Dari Bible from http://www.afghanbibles.org, Copyright © 2013 Afghan Bibles Ver. 2.4.4
+Go-Bible-Align: Right
