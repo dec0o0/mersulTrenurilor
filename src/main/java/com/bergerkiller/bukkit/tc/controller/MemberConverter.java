@@ -19,6 +19,27 @@ public class MemberConverter implements Converter<MinecartMember<?>> {
 		if (value == null) {
 			return def;
 		}
+
+			public static void doFixedTick() {
+		groupTickBuffer.clear();
+		groupTickBuffer.addAll(groups);
+		try {
+			for (MinecartGroup group : groupTickBuffer) {
+				if (!group.ticked.clear()) {
+					// Ticked was False, tick it now
+					group.doPhysics();
+					// Update the positions of the entities in the world(s)
+					for (MinecartMember<?> member : group) {
+						member.getEntity().doPostTick();
+					}
+				}
+			}
+		} catch (Throwable t) {
+			TrainCarts.plugin.handle(t);
+		}
+	}
+
+	
 		if (value instanceof UUID) {
 			return LogicUtil.fixNull(MinecartMemberStore.getFromUID((UUID) value), def);
 		}
