@@ -43,6 +43,24 @@ echo <<<EOD
 EOD;
 }
 
+
+echo <<<EOD
+
+	<html> 
+	<head><title>Download-Statistics</title></head>
+	<body>
+EOD;
+
+
+
+echo <<<EOD
+
+	<html> 
+	<head><title>Download-Statistics</title></head>
+	<body>
+EOD;
+
+
 function print_table_line($no , $filename = "" , $count = 0) {
 
 echo <<<EOD
